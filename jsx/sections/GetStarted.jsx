@@ -7,6 +7,7 @@ import styles from '../../styles';
 import { startingFeatures } from '../../constants';
 import { StartSteps, TitleText, TypingText } from '../components';
 import { staggerContainer, fadeIn, planetVariants } from '../../utils/motion';
+import {zeroPrefixNumber} from "../../utils/stringUtils";
 
 const GetStarted = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -41,7 +42,7 @@ const GetStarted = () => (
           {startingFeatures.map((feature, index) => (
             <StartSteps
               key={feature}
-              number={`${index < 10 ? '0' : ''} ${index + 1}`}
+              number={zeroPrefixNumber(index)}
               text={feature}
             />
           ))}
